@@ -24,9 +24,8 @@ class AuthViewModel with ChangeNotifier {
       }
     }).onError((error, stackTrace) {
       setLoading(false);
+      Utils.flushBarErrorMessage(error.toString(), context);
       if (kDebugMode) {
-        Utils.flushBarErrorMessage(error.toString(), context);
-
         print(error.toString());
       }
     });

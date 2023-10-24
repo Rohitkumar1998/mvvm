@@ -23,12 +23,20 @@ class Utils {
         context: context,
         flushbar: Flushbar(
           message: message,
-          title: "SAD",
+          // title: "SAD",
+
           forwardAnimationCurve: Curves.decelerate,
           margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+
           flushbarPosition: FlushbarPosition.TOP,
           padding: EdgeInsets.all(15),
           backgroundColor: Colors.yellow,
+          positionOffset: 20,
+          icon: Icon(
+            Icons.error,
+            size: 28,
+            color: Colors.white,
+          ),
           reverseAnimationCurve: Curves.easeInOut,
           duration: Duration(seconds: 3),
         )..show(context));

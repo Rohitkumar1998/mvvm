@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:mvvm/resourses/component/round_button.dart';
 import 'package:mvvm/utitlities/routes/rotuteName.dart';
 import 'package:mvvm/utitlities/routes/utils.dart';
@@ -7,14 +8,14 @@ import 'package:mvvm/resourses/component/round_button.dart';
 import 'package:mvvm/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
 
-class LogScreen extends StatefulWidget {
-  const LogScreen({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<LogScreen> createState() => _LogScreenState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LogScreenState extends State<LogScreen> {
+class _SignUpViewState extends State<SignUpView> {
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
   ValueNotifier<bool> _obsecurePasssword = ValueNotifier<bool>(true);
@@ -86,7 +87,7 @@ class _LogScreenState extends State<LogScreen> {
                 height: height * .1,
               ),
               RoundButton(
-                title: 'Login',
+                title: 'Sign Un',
                 loading: authviewMode.loading,
                 onPresed: () {
                   if (_emailController.text.isEmpty) {
@@ -112,20 +113,10 @@ class _LogScreenState extends State<LogScreen> {
               ),
               InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, RoutesNames.signUp);
+                    Navigator.pushNamed(context, RoutesNames.login);
                   },
-                  child: Text("don't have An Account ? Sign Up"))
+                  child: Text("Alredy have an  account ? login"))
             ])));
-    //       body: InkWell(
-    //           onTap: () {
-    //             Utils.flushBarErrorMessage('No internate connction', context);
-
-    //             // Utils.toastMessage('clicked me');
-    //             // Utils.snackBar('yess', context);
-    //             // Navigator.pushNamed(context, RoutesNames.home);
-    //             // Navigator.push(context,
-    //             //     MaterialPageRoute(builder: (context) => HomeScreen()));
-    //           },
-    //           child: Center(child: Text('Clicked')))
+    ;
   }
 }
