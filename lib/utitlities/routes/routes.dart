@@ -4,10 +4,14 @@ import 'package:mvvm/utitlities/routes/rotuteName.dart';
 import 'package:mvvm/view/homeScreen.dart';
 import 'package:mvvm/view/logScreen.dart';
 import 'package:mvvm/view/signup_view.dart';
+import 'package:mvvm/view/splace_view.dart';
 
 class Routes {
   static MaterialPageRoute genrateRoutes(RouteSettings settings) {
     switch (settings.name) {
+      case RoutesNames.splash:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const SplceView());
       case RoutesNames.home:
         return MaterialPageRoute(
             builder: (BuildContext context) => HomeScreen());

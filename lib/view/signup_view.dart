@@ -88,7 +88,7 @@ class _SignUpViewState extends State<SignUpView> {
               ),
               RoundButton(
                 title: 'Sign Un',
-                loading: authviewMode.loading,
+                loading: authviewMode.signUploading,
                 onPresed: () {
                   if (_emailController.text.isEmpty) {
                     Utils.flushBarErrorMessage('Please enter email', context);
@@ -104,7 +104,7 @@ class _SignUpViewState extends State<SignUpView> {
                       'password': _passwordController.text.toString()
                     };
                     print('Api hit');
-                    authviewMode.loginApi(data, context);
+                    authviewMode.signUpApi(data, context);
                   }
                 },
               ),
