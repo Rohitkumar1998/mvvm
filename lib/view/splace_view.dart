@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm/view/servieces.dart/splace_servies.dart';
 
 class SplceView extends StatefulWidget {
   const SplceView({super.key});
@@ -8,17 +9,21 @@ class SplceView extends StatefulWidget {
 }
 
 class _SplceViewState extends State<SplceView> {
+  SplashServies splashServies = SplashServies();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    splashServies.checkAuthentication(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(children: []),
+      body: Text(
+        'Splace Screen',
+        style: Theme.of(context).textTheme.headlineMedium,
+      ),
     );
   }
 }
